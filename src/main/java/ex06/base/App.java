@@ -24,6 +24,7 @@ Challenge
 Handle situations where the program returns a negative number by stating that the user can already retire.
  */
 
+import java.time.Year;
 import java.util.Scanner;
 
 public class App {
@@ -36,6 +37,8 @@ public class App {
         System.out.println("At what age would you like to retire?");
         int retireAge = in.nextInt();
 
-        System.out.println("You have %d years left until you can retire.", retireAge - age);
+        System.out.println("You have " + (retireAge-age) +" years left until you can retire.");
+        int year = Year.now().getValue();
+        System.out.println("It's " + year + ", so you can retire in " + (year+(retireAge-age)) + ".");
     }
 }
